@@ -8,4 +8,9 @@ let file ={
   title: process.argv[3]
 };
 
-s3Upload(file);
+s3Upload(file)
+  .then((data)=>{
+    console.log("inside the block");
+    console.log("data is: ",data);
+  })
+  .catch(console.error);
